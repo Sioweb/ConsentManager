@@ -87,26 +87,26 @@
 
 		swConsent.extend({
 			loadAllowedTools: function() {
-				if(window.ci_consent !== undefined) {
-					for(var tool in window.ci_consent) {
+				if(window.gtm_consent_tags !== undefined) {
+					for(var tool in window.gtm_consent_tags) {
 						if(swConsent.urlContains('local_gtm_bar=1')) {
 							if(swConsent.checkUserConsent(tool)) {
 								if(swConsent.showDebug) {
 									console.log('load', tool, 'tool');
 								}
-								window.ci_consent[tool]();
+								window.gtm_consent_tags[tool]();
 							} else if(swConsent.showDebug) {
 								console.log('Tool', tool, 'cannot be loaded, permissions denied!');
 							}
 						} else {
-							window.ci_consent[tool]();
+							window.gtm_consent_tags[tool]();
 							if(swConsent.showDebug) {
 								console.log('tool', tool, 'loaded');
 							}
 						}
 					}
 				} else if(swConsent.showDebug) {
-					console.log('window.ci_consent seams to be undefined', window);
+					console.log('window.gtm_consent_tags seams to be undefined', window);
 				}
 			}
 		});
