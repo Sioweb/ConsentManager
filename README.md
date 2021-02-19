@@ -1,6 +1,6 @@
 # ConsentManager
 
-This is a simple solution for a local consent manager for Googles Tagmanager. Thanks to Wyrfel, for [his very usefull example](https://theiconic.tech/load-external-js-via-custom-javascript-variables-in-google-tag-manager-ecdb99c31521), how to use custom javascript variables for Facebook Pixel in Tagmanager.
+This is a simple solution for a local consent manager for Googles Tagmanager. Thanks to Andre Wyrwa, for [his very usefull example](https://theiconic.tech/load-external-js-via-custom-javascript-variables-in-google-tag-manager-ecdb99c31521), how to use custom javascript variables for Facebook Pixel in Tagmanager.
 
 This script will do two things, it will show users a very ugly consent bar - unless you style it :) - and it save user desision to localStorage. Once the user save his settings, it wont show up again, until user delete localStorage (Chrome > Devtools > Application > Localstorage > `sw-consent-tool`).
 
