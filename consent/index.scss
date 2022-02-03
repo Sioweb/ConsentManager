@@ -1,0 +1,170 @@
+/*!
+ * Bootstrap v5.0.2 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// scss-docs-start import-stack
+// Configuration
+
+// Layout & components
+[data-sw-consent-tool] {
+    @import "~bootstrap/scss/functions";
+    @import "~bootstrap/scss/variables";
+    @import "~bootstrap/scss/mixins";
+    @import "~bootstrap/scss/utilities";
+
+    @import "~bootstrap/scss/root";
+    @import "~bootstrap/scss/containers";
+    @import "~bootstrap/scss/forms";
+    @import "~bootstrap/scss/containers";
+    @import "~bootstrap/scss/grid";
+    @import "~bootstrap/scss/modal";
+    @import "~bootstrap/scss/buttons";
+
+    &,& * {
+        box-sizing: border-box;
+    }
+
+    .btn-primary {
+        &, &:hover {
+            border: 0 none;
+        }
+    }
+
+    .modal {
+        background-color: rgba(0,0,0,.6);
+        &.fade .modal-dialog {
+            transform: translate(0, 0);
+        }
+    }
+
+    .modal-content {
+        border: 2px ​solid #000;
+    }
+
+    .modal-header {
+        text-align: center;
+        justify-content: center;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .modal-footer {
+        padding: 0;
+        background-color: #dee2e6;
+    }
+
+    .justify-content-sm-center {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .justify-content-sm-between {
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .justify-content-sm-around {
+        text-align: center;
+        justify-content: space-around;
+    }
+
+    .show {
+        opacity: 1;
+        display: block !important;
+    }
+
+    .btn {
+        margin: 0 0 3px;
+        cursor: pointer;
+    }
+
+    h2.modal-title {
+        font-size: 24px;
+        margin: 0 0 10px;
+        line-height: 125%;
+    }
+
+    p {
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    label {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .sw-consent-btn-settings {
+        margin-top: 20px;
+    }
+
+    .sw_consent_details > .row + .row {
+        margin-top: 20px;
+    }
+
+    .sw-consent-btn-details-container button {
+        width: 100%;
+    }
+
+    // .sw-consent-tool-show-cookie-details-description {
+    //     overflow: auto;
+    //     max-height: 400px;
+    // }
+
+    .sw-consent-tool-show-cookie-details {
+        display: none;
+        padding: 20px;
+        list-style-type: none;
+        background-color: #eee;
+        li::before {
+            display: none;
+        }
+    }
+
+    [data-sw-consent-details-type="tracking"] {
+        overflow: auto;
+        max-height: 50vh;
+    }
+
+    [for^="sw-consent-tool-show-cookie-details-for-"] {
+        display: block;
+        padding-left: 40px;
+        margin-bottom: 20px;
+    }
+
+    [id^="sw-consent-tool-show-cookie-details-for-"] {
+        display: none;
+
+        &:checked + [for^="sw-consent-tool-show-cookie-details-for-"] {
+            display: none;
+        }
+        &:checked ~ .sw-consent-tool-show-cookie-details {
+            display: block;
+        }
+    }
+
+    .sw-consent-tool-show-cookie-details-description {
+        margin-top: 15px;
+    }
+}
+
+#toggle_sw_consent_details {
+    display: none;
+
+    & ~ .sw_consent_details,
+    &:checked ~ .sw_consent_general {
+        display: none;
+    }
+
+    & ~ .sw_consent_general,
+    &:checked ~ .sw_consent_details {
+        display: block;
+    }
+}

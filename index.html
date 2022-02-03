@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent</title>
+    <script src="//consent.localhost/consent/consent.js?gtm_id=GTM-53SG8PH"></script>
+    <!-- <script src="//consent.localhost/consent/consent.js?gtm_id=GTM-53SG8PH"></script> -->
+    <!-- <script src="//consent.seipp.com/consent.js?gtm_id=GTM-53SG8PH"></script> -->
+    <!-- <script src="//consent.seipp.com/consent.js?gtm_id=GTM-53SG8PH"></script> -->
+    <script>
+        swConsent.template = null;
+        // swConsent.cookieDetails = '<a href="https://www.seipp.com/service/datenschutz.html#cookies">Weiterführende Informationen</a>';
+        swConsent.showOnlyOnce = false;
+        swConsent.loadAllTools = true;
+        swConsent.showDetailsDescription = true;
+        swConsent.setAjaxData({
+            url: '/ajax.html'
+        });
+        swConsent.footerLinks = [
+            {title: 'Impressum', link: 'https://www.seipp.com/service/impressum.html'},
+            {title: 'Datenschutz', link: 'https://www.seipp.com/service/datenschutz.html'},
+            {title: 'AGB', link: 'https://shop.seipp.com/AGB/'},
+        ];
+    </script>
+    <link rel="stylesheet" href="seipp.css" />
+    <script src="test.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Neue Webseite</h1>
+        <p>Hallo Welt</p>
+    </div>
+
+    <div data-sw-consent-tool id="sw-consent-tool">
+        <div class="modal fade" id="sw-consent-tool-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <h2 class="modal-title">Wir verwenden jetzt Cookies</h2>
+                            <p>Sie können Ihre Zustimmung jederzeit widerrufen oder anpassen.</p>
+                        </div>
+                        <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>-->
+                    </div>
+                    <div class="modal-body">
+                        <form class="sw-consent-tool-inner row">
+                            <input type="checkbox" id="toggle_sw_consent_details" />
+                            <div class="sw_consent_general">
+                                <div class="container">
+                                    <div class="row justify-content-sm-center sw-consent-btn-accept">
+                                        <button type="button" class="col col-lg-6 btn btn-primary sw-consent-tool-consent-all">Akzeptieren</button>
+                                    </div>
+                                    <div class="row justify-content-sm-center sw-consent-btn-settings">
+                                        <label for="toggle_sw_consent_details" class="col col-lg-6 btn btn-outline-secondary">Einstellungen</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="sw_consent_details">
+    
+                                ##details_cookie##
+    
+                                <div class="row justify-content-sm-center sw-consent-btn-details-container">
+                                    <div class="col col-sm-5"><button type="button" class="btn btn-outline-secondary sw-consent-tool-save">Auswahl speichern</button></div>
+                                    <div class="col col-sm-5"><button type="button" class="btn btn-primary sw-consent-tool-consent-all">Alle akzeptieren</button></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    ##footer##
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        dataLayer.push({event: 'swConsent_done'});
+        document.querySelectorAll('.reopen-sw-consent').forEach(function(element) {
+            element.addEventListener(function(e) {
+                e.preventDefault();
+                swConsent.showContsentBar(true)
+            });
+        });
+    </script>
+</body>
+</html>
